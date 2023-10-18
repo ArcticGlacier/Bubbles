@@ -6,76 +6,130 @@
     position: absolute;
 }
 
+@keyframes horizontalSway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px); 
+    }
+}
+
+@keyframes verticalSway {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes diagonalSway {
+    0% {
+        transform: translateY(0,0);
+    }
+    100% {
+        transform: translate(10px, 10px);
+    }
+}
+
+@keyframes otherDiagonalSway {
+    0% {
+        transform: translateY(0,0);
+    }
+    100% {
+        transform: translate(10px, -10px);
+    }
+}
+
+
+
 #bubble0{
     top: 10px;
+    animation: verticalSway 3s infinite alternate;
 }
 
 #bubble1{
     top: 100px;
     left: 250px;
+    animation: diagonalSway 3s infinite alternate;
 }
 
 #bubble2{
     top: 250px;
     left: 200px;
+    animation: horizontalSway 3s infinite alternate;
 }
 
 #bubble3{
     top: 300px;
     left: 300px;
+    animation: horizontalSway 3s infinite alternate;
 }
 
 #bubble4{
     top: 200px;
     left: 400px;
+    animation: horizontalSway 3s infinite alternate;
 }
 
 #bubble5{
     top: 375px;
     left: 30px;
+    animation: diagonalSway 3s infinite alternate;
 }
 
 #bubble6{
     top: 500px;
     left: 350px;
+    animation: otherDiagonalSway 3s infinite alternate;
 }
 
 #bubble7{
     top: 675px;
     left: 225px;
+    animation: horizontalSway 3s infinite alternate;
 }
 
 #bubble8{
     top: 720px;
     left: 400px;
+    animation: verticalSway 3s infinite alternate;
 }
 
 #bubble9{
     top: 800px;
     left: 80px;
+    animation: horizontalSway 3s infinite alternate;
 }
 
 #bubble10{
     top: 850px;
     left: 300px;
+    animation: verticalSway 3s infinite alternate;
 }
 
 #bubble11{
     top: 850px;
     left: 500px;
+    animation: otherDiagonalSway 3s infinite alternate;
 }
 
 #bubble12{
     top: 1000px;
     left: 150px;
+    animation: diagonalSway 3s infinite alternate;
 }
 
 #bubble13{
     top:1000px;
     left:400px;
+    animation: horizontalSway 2.5s infinite alternate;
 }
 
 #bubble14{
     top:1150px;
     left:325px;
+    animation: verticalSway 3s infinite alternate;
 }
+
