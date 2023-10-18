@@ -6,6 +6,17 @@
     position: absolute;
 }
 
+.focusedBubble{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    outline:solid 2.5px;
+    outline-color: white;
+    box-shadow: 0px 0px 23px 2px rgba(255, 255, 255, 0.66);
+}
+
 @keyframes horizontalSway {
     0% {
         transform: translateX(0);

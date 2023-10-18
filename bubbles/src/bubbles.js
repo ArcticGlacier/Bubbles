@@ -1,17 +1,24 @@
 import "./bubbles.css";
+import { useEffect, useState } from "react";
 
 export default function Bubbles(props) {
-  console.log(props.idProp);
+  const [bubbleSelected, setBubbleSelected] = useState(false);
+
+  function BubbleClicked() {
+    setBubbleSelected(!bubbleSelected);
+  }
+
   return (
     <div>
       <button
-        className="bubble"
+        className={bubbleSelected ? "focusedBubble" : "bubble"}
         id={props.idProp}
         style={{
           backgroundColor: props.color,
           width: props.size,
           height: props.size,
         }}
+        onClick={BubbleClicked}
       ></button>
     </div>
   );

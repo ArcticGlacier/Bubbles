@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Bubbles from "./bubbles";
+import { useState } from "react";
 
 function App() {
   let bubbleList = [
@@ -20,6 +21,29 @@ function App() {
     { color: "#fcf6bd", size: "200px", isKey: false },
     { color: "#d0f4de", size: "40px", isKey: false },
   ];
+
+  const [firstBubble, setFirstBubble] = useState(false);
+  const [secondBubble, setSecondBubble] = useState(false);
+  const [thirdBubble, setThirdBubble] = useState(false);
+
+  // if button clicked, activate bubble key, if invalid bubble clicked, reset bubble keys
+  function HandleBubbleClick(isKey, idProp) {
+    if (isKey) {
+      switch (idProp) {
+        case "bubble0":
+          setFirstBubble(true);
+        case "bubble5":
+          setSecondBubble(true);
+        case "bubble8":
+          setThirdBubble(true);
+      }
+    } else {
+      setFirstBubble(false);
+      setSecondBubble(false);
+      setThirdBubble(false);
+    }
+  }
+
   return (
     <div className="App">
       <div className="background">
