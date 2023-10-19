@@ -1,7 +1,6 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Bubbles from "./bubbles";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   let bubbleList = [
@@ -25,31 +24,49 @@ function App() {
   const [firstBubble, setFirstBubble] = useState(false);
   const [secondBubble, setSecondBubble] = useState(false);
   const [thirdBubble, setThirdBubble] = useState(false);
+  const [background, setBackground] = useState("background");
+  const [unlocked, setUnlocked] = useState(false);
 
   // if button clicked, activate bubble key, if invalid bubble clicked, reset bubble keys
   function HandleBubbleClick(isKey, idProp) {
     if (isKey) {
-      switch (idProp) {
-        case "bubble0":
-          setFirstBubble(true);
-        case "bubble5":
-          setSecondBubble(true);
-        case "bubble8":
-          setThirdBubble(true);
+      if (idProp == "bubble0") {
+        console.log("first bubble selected");
+        setFirstBubble(true);
+      } else if (idProp == "bubble5") {
+        console.log("sixth bubble selected");
+        setSecondBubble(true);
+      } else if ("bubble8") {
+        console.log("ninth bubble selected");
+        setThirdBubble(true);
       }
-    } else {
-      setFirstBubble(false);
-      setSecondBubble(false);
-      setThirdBubble(false);
     }
   }
 
+  function timeout() {
+    return new Promise((res) => setTimeout(res, 600));
+  }
+
+  async function UpdateBackground() {
+    await timeout();
+    setBackground("unlockedBackground");
+  }
+
+  useEffect(() => {
+    if (firstBubble && secondBubble && thirdBubble) {
+      setUnlocked(true);
+    }
+  }, [firstBubble, secondBubble, thirdBubble]);
+
   return (
     <div className="App">
-      <div className="background">
+      <div className={background}>
         {bubbleList.map((bubble, index) => {
           return (
             <Bubbles
+              updateBackground={UpdateBackground}
+              bubbleKeyClick={HandleBubbleClick}
+              bubblePopped={unlocked}
               color={bubble.color}
               size={bubble.size}
               isKey={bubble.isKey}

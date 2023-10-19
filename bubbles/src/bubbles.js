@@ -6,13 +6,24 @@ export default function Bubbles(props) {
 
   function BubbleClicked() {
     setBubbleSelected(!bubbleSelected);
+    props.bubbleKeyClick(props.isKey, props.idProp);
+  }
+
+  function BubbleStyle() {
+    if (props.bubblePopped) {
+      props.updateBackground();
+      return `popped ${props.idProp}`;
+    } else if (bubbleSelected) {
+      return `focusedBubble ${props.idProp}`;
+    } else {
+      return `bubble ${props.idProp}`;
+    }
   }
 
   return (
     <div>
       <button
-        className={bubbleSelected ? "focusedBubble" : "bubble"}
-        id={props.idProp}
+        className={BubbleStyle()}
         style={{
           backgroundColor: props.color,
           width: props.size,
