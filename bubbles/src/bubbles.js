@@ -6,11 +6,12 @@ export default function Bubbles(props) {
 
   function BubbleClicked() {
     setBubbleSelected(!bubbleSelected);
-    props.bubbleKeyClick(props.isKey, props.idProp);
   }
 
   function BubbleStyle() {
-    if (props.bubblePopped) {
+    if (props.bubbleShake) {
+      return `shake ${props.idProp}`;
+    } else if (props.bubblePopped) {
       props.updateBackground();
       return `popped ${props.idProp}`;
     } else if (bubbleSelected) {
@@ -19,6 +20,10 @@ export default function Bubbles(props) {
       return `bubble ${props.idProp}`;
     }
   }
+
+  useEffect(() => {
+    props.bubbleKeyClick(props.isKey, props.idProp, bubbleSelected);
+  }, [bubbleSelected]);
 
   return (
     <div>

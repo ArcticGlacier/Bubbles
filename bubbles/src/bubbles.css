@@ -4,6 +4,7 @@
     margin:30px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     position: absolute;
+
 }
 
 .focusedBubble{
@@ -54,6 +55,24 @@
     100% {
         transform: translate(10px, -10px);
     }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+.shake{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    animation: shake 0.5s 1 !important;
+    transform-origin: center ;
 }
 
 
@@ -158,6 +177,7 @@
         transform: scale(0);
       }
 }
+
 
 .popped{
     border-radius: 50%;
