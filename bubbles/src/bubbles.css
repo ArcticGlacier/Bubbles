@@ -1,0 +1,191 @@
+.bubble{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+
+}
+
+.focusedBubble{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    outline:solid 2.5px;
+    outline-color: white;
+    box-shadow: 0px 0px 23px 2px rgba(255, 255, 255, 0.66);
+}
+
+
+
+
+@keyframes horizontalSway {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(10px); 
+    }
+}
+
+@keyframes verticalSway {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes diagonalSway {
+    0% {
+        transform: translateY(0,0);
+    }
+    100% {
+        transform: translate(10px, 10px);
+    }
+}
+
+@keyframes otherDiagonalSway {
+    0% {
+        transform: translateY(0,0);
+    }
+    100% {
+        transform: translate(10px, -10px);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(5px) }
+    50% { transform: translateX(-5px) }
+    75% { transform: translateX(5px) }
+    100% { transform: translateX(0) }
+}
+
+.shake{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    animation: shake 0.5s 1 !important;
+    transform-origin: center ;
+}
+
+
+
+.bubble0{
+    top: 10px;
+    animation: verticalSway 3s infinite alternate;
+}
+
+.bubble1{
+    top: 100px;
+    left: 250px;
+    animation: diagonalSway 3s infinite alternate;
+}
+
+.bubble2{
+    top: 250px;
+    left: 200px;
+    animation: horizontalSway 3s infinite alternate;
+}
+
+.bubble3{
+    top: 300px;
+    left: 300px;
+    animation: horizontalSway 3s infinite alternate;
+}
+
+.bubble4{
+    top: 200px;
+    left: 400px;
+    animation: horizontalSway 3s infinite alternate;
+}
+
+.bubble5{
+    top: 375px;
+    left: 30px;
+    animation: diagonalSway 3s infinite alternate;
+}
+
+.bubble6{
+    top: 500px;
+    left: 350px;
+    animation: otherDiagonalSway 3s infinite alternate;
+}
+
+.bubble7{
+    top: 675px;
+    left: 225px;
+    animation: horizontalSway 3s infinite alternate;
+}
+
+.bubble8{
+    top: 720px;
+    left: 400px;
+    animation: verticalSway 3s infinite alternate;
+}
+
+.bubble9{
+    top: 800px;
+    left: 80px;
+    animation: horizontalSway 3s infinite alternate;
+}
+
+.bubble10{
+    top: 850px;
+    left: 300px;
+    animation: verticalSway 3s infinite alternate;
+}
+
+.bubble11{
+    top: 850px;
+    left: 500px;
+    animation: otherDiagonalSway 3s infinite alternate;
+}
+
+.bubble12{
+    top: 1000px;
+    left: 150px;
+    animation: diagonalSway 3s infinite alternate;
+}
+
+.bubble13{
+    top:1000px;
+    left:400px;
+    animation: horizontalSway 2.5s infinite alternate;
+}
+
+.bubble14{
+    top:1150px;
+    left:325px;
+    animation: verticalSway 3s infinite alternate;
+}
+
+@keyframes pop {
+    0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(0);
+      }
+}
+
+
+.popped{
+    border-radius: 50%;
+    border: none;
+    margin:30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    animation: pop 0.5s 1 !important;
+    animation-fill-mode: forwards !important;
+    transform-origin: center ;
+}
